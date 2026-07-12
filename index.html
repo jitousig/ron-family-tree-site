@@ -800,9 +800,17 @@ const NODES = [ // NODES array elements — spliced into tree-shell.html at /*__
 /* ---------- GEN 3 · Bernadette's Deegan great-great-grandparents (Montréal) ---------- */
 {id:'william_deegan',gen:3,ord:165,lineage:'deegan',status:'sourced',kind:'couple',
  name:`William Deegan <em>&amp;</em> Mary Farrell`,
- sub:`Saint-Gabriel, Montréal · Irish Catholic · from the 1895 marriage act`,
- facts:`<p><b>William Deegan</b> and <b>Mary Farrell</b>, of Saint-Gabriel's parish, Montréal, were Mary Deegan's parents — opening the <b>Deegan</b> (and Farrell) branches of Bernadette's ancestry. Their names are read from their daughter's 1895 marriage act. No dates are yet known.</p>`,
- cite:`Named on the 1895 Saint-Gabriel (Montréal) marriage act of their daughter Mary Deegan (Drouin; Ancestry coll. 1091, rec. 615353). See research-dossier.md § Session 3.`}
+ sub:`Montréal · m. 23 Oct 1867 (Notre-Dame) · Irish Catholic`,
+ parents:['deegan_sr'],
+ facts:`<p><b>William Deegan</b> and <b>Mary Farrell</b> — Mary Deegan's parents — married at <b>Notre-Dame Basilica, Montréal, on 23 October 1867</b> (before Saint-Gabriel parish, where they later worshipped, was founded). They open the <b>Deegan</b> and Farrell branches of Bernadette's ancestry. William's own parents were <b>William Deegan (Sr.) &amp; Bridget Garrigou</b>; Mary Farrell's parents await the register image. No vital dates are yet known.</p>`,
+ cite:`Marriage: 1867 Basilique Notre-Dame (Montréal) act of William Deegan × Mary Farrell (Drouin; Ancestry coll. 1091, recs. 11488086 / 14412096). Also named on their daughter Mary Deegan's 1895 act (rec. 615353).`},
+
+/* ---------- GEN 4 · Deegan line back into mid-19thc Irish Montréal ---------- */
+{id:'deegan_sr',gen:4,ord:163,lineage:'deegan',status:'sourced',kind:'couple',
+ name:`William Deegan (Sr.) <em>&amp;</em> Bridget Garrigou`,
+ sub:`Irish Catholic Montréal · from the 1867 marriage`,
+ facts:`<p><b>William Deegan (Sr.)</b> and <b>Bridget Garrigou</b> — parents of the William Deegan who married Mary Farrell in 1867 — reach into the mid-19th-century Irish-Catholic community of Montréal, Bernadette's deepest-known root on this line. Their names come from their son's 1867 Notre-Dame marriage act; "Garrigou" is a French-register rendering of an Irish surname (perhaps Garrity / Geraghty). No dates are yet known.</p>`,
+ cite:`Named on the 1867 Basilique Notre-Dame (Montréal) marriage act of their son William Deegan (Drouin; Ancestry coll. 1091, rec. 11488086). See research-dossier.md § Session 3.`}
  ];
 const VIEWDATA = (// VIEWDATA — supplementary presentation data for the interactive tree views
 // (map journeys, timeline lifespans, era markers, frontier, tour, stories).
@@ -820,7 +828,8 @@ spans:{
  william_hannah_casey:[1863,1935,1],       /* Casey grandparents (Montréal); both dates estimated */
  whelan_dergan:[1868,1940,1],              /* Wm James Whelan (policeman) × Mary Deegan; m.1895; dates est. */
  james_whelan:[1843,1894,1],               /* Wm James Whelan's parents; Bridget Cavanagh d. by 1895 */
- william_deegan:[1845,1915,1],             /* Mary Deegan's parents (St-Gabriel); both dates estimated */
+ william_deegan:[1845,1915,1],             /* Mary Deegan's parents; m.1867 Notre-Dame; dates estimated */
+ deegan_sr:[1818,1890,1],                  /* gen-4 Deegan × Garrigou; mid-19thc Irish Montréal; est. */
 },
 
 /* Migration map — each journey is a labelled path of stops:
