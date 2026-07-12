@@ -922,8 +922,33 @@ journeys:[],
 eras:[],
 
 /* Frontier (research dashboard): one entry per open brick-wall.
-   { id:'node_id', q:'the open question', … } — id must be a real node. */
-frontier:[],
+   { id:'node_id', q:'the open question', how:'the record that would break it' } — id must be a real node. */
+frontier:[
+ {id:'john_sr_tourangeau',
+  q:"Who were John Tourangeau Sr. and the wife the family had already “forgotten” by 1929 — the Tourangeau line's crossing back into Québec?",
+  how:"Not the Catholic Drouin registers: the only 1863 Pontiac Tourangeaus there are Raphaël's and Michel's Catholic households, not ours — our Tourangeaus were Anglican. The answer lies in a Portage-du-Fort / Pontiac Protestant (Anglican) register, or in John Jr.'s ~1889 marriage, which would name both of his parents."},
+ {id:'john_marien_tourangeau',
+  q:"What was Marien's maiden name — John Tourangeau's wife and Henry's mother?",
+  how:"John & Marien married about 1889 (son Henry born 1890); Ontario marriages before 1938 are public, so their Renfrew-area marriage record would give her surname and parents — the very act that also names John's own parents."},
+ {id:'eugene_melina_lalonde',
+  q:"Who were Eugene Lalonde's parents — the one wall on Claire's Prairie line?",
+  how:"Several “Eugene Lalonde b.1890 Québec” boys appear in 1901 with nothing to tell them apart. The disambiguator is Eugene × Melina's ~1918 marriage — held in a Saskatchewan Catholic parish register (Willow Bunch / diocese of Gravelbourg) or the orderable SK marriage certificate; it is in no free index."},
+ {id:'andre_gaudry',
+  q:"Is the Red River Gaudry line Métis by ancestry, and who was Amable's mother?",
+  how:"Amable Gaudry's 1826 St-Boniface baptism — via the HBCA “Rupert's Land baptisms 1820–1851” name index — would name his mother and test the claim that his father was André Gaudry, a Montréal stonemason. Manitoba Métis scrip affidavits (LAC) would corroborate."},
+ {id:'modeste_gaudry',
+  q:"What was Elizabeth's maiden name — Modeste Gaudry's wife and Melina's mother?",
+  how:"Not in the Manitoba civil index (all 43 Gaudry marriages 1882–1944 checked; Modeste's is absent, though his brothers Octave in 1886 and Guillaume in 1891 are there). It was a church-only marriage — held in the St-Boniface-area Catholic parish register (SHSB / FamilySearch)."},
+ {id:'william_hannah_casey',
+  q:"Who were Hannah McConville's parents — Bernadette's Casey grandmother?",
+  how:"Her ~1865 baptism (likely Huntingdon St-Joseph) won't index — the surname garbles to “McConnell.” Route: browse the Huntingdon-area register images, or read William Casey × Hannah McConville's ~1884 marriage act off the register image."},
+ {id:'james_ann_casey',
+  q:"Where in Ireland did James Casey and Ann Donnelly come from?",
+  how:"They most likely married in Ireland before emigrating (their eldest Québec-born child dates to 1859), so the Québec toolset is spent — this needs Irish RC parish registers and Griffith's Valuation. A softer local lead first: Ann's widow burial or James's burial at St Ann's, Griffintown, which may state an origin or age."},
+ {id:'martin_whelan_day',
+  q:"What were the Irish origins of the Stoneham Whelan and Kavanagh families?",
+  how:"Martin Whelan × Margaret Day and Tobias Kavanagh × Anne Kelly were Irish-born settlers of the colony north of Québec City. The 1861/1871 Stoneham censuses (which may state each family's Irish county), or Griffith's Valuation, are the next step."},
+],
 
 /* Story-mode tour steps (map walkthrough). { yr, id?, stop?:[journeyId,stopIdx], … } */
 tour:[],
