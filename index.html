@@ -566,6 +566,7 @@ a.nrv-card::after{content:'›';font-size:.72em;color:var(--record-blue);vertica
 
 <div class="controls">
   <button class="fchip l-tous" data-lin="tourangeau" data-on="1">Tourangeau</button>
+  <button class="fchip l-tetr" data-lin="lalonde" data-on="1">Lalonde</button>
   <button class="fchip l-barnes" data-lin="casey" data-on="1">Casey</button>
   <button class="fchip l-heff" data-lin="whelan" data-on="1">Whelan</button>
   <button class="fchip l-charl" data-lin="deegan" data-on="1">Deegan</button>
@@ -727,13 +728,13 @@ const NODES = [ // NODES array elements — spliced into tree-shell.html at /*__
 {id:'stanley_claire_tourangeau',gen:1,ord:50,lineage:'tourangeau',status:'reported',kind:'couple',
  name:`Stanley Tourangeau <em>&amp;</em> Claire Lalonde`,
  sub:`Arnprior · Stan 1917–1996 (fire chief 1961–72, artist) · Claire 1922–2010 · m. ~1946`,
- parents:['henry_tourangeau'],
+ parents:['henry_tourangeau','eugene_melina_lalonde'],
  photos:[["STAN_Tourangeau_1996.jpg","Stan Tourangeau — Arnprior fire chief & artist (Ottawa Citizen, 28 Dec 1996)"]],
  facts:`<p><b>Stanley "Stan" Tourangeau</b> (b. <i>c.</i>1917 – d. 26 December 1996), Ron's father, was "one of the Ottawa Valley's best known artists" and an Arnprior icon. An <b>Arnprior native</b> — born <i>c.</i>1917 at 300 Elgin Street, the middle son of firefighter <b>Henry Tourangeau</b> and <b>Nettie</b>, with brothers Harry and Kenneth (1921 census) — he served the town's <b>volunteer fire department for 36 years, its chief from 1961 to 1972</b>, when the sight in his left eye was lost to multiple sclerosis. He was laid to rest with firefighters as pallbearers and a pumper truck for a hearse; the funeral mass was at <b>St. John Chrysostom Church, Arnprior</b> — the same parish as his daughter-in-law Bernadette's.</p>
  <p>In the Second World War he was a <b>Royal Canadian Air Force mechanic</b>, painting nose-art (Betty Grable's legs, sharks' teeth) on fighter planes and camouflaging an Aleutian Islands squadron. Home again, he clerked at a hardware store and headed maintenance at Pfizer Canada — but was "better known for firefighting, <b>like his father, Henry, before him</b>, and for his art." A prolific oil landscapist, he taught hundreds in night classes, built Santa-Claus-parade floats, gave paintings to town charities, and won a <b>Canada Centennial Medal (1967)</b>. He painted on through two heart attacks, a stroke and cataract surgery.</p>
- <p><b>Claire Lalonde</b> (b. 1922 – d. 20 April 2010, at Bonnechere Manor, Renfrew) was his wife — the head of a <b>Lalonde</b> line. The couple married about <b>1946</b> (their 40th anniversary fell in 1986). Claire's siblings included Denise (Gibeault) and Jeannine (Verbisky); brothers Leon, Rene and Bernard predeceased her. Of their four children, one is <b>Ron</b> (who married Bernadette Casey); the living generation is kept private.</p>
- <p><em>Well documented but graded <b>reported</b>: Stan's birth year is inferred from his age (79) and both spouses' vital certificates are still to be found.</em></p>`,
- cite:`Peter Hum, "Firefighters pay tribute to Valley legend," <em>Ottawa Citizen</em>, 28 Dec 1996, p. E45 (image saved: <code>records/TOURANGEAU_Stanley_obituary_OttawaCitizen_1996-12-28.pdf</code>); Claire Tourangeau obituary, Pilon Family Funeral Home (2010). See research-dossier.md § Session 1.`},
+ <p><b>Claire Lalonde</b> (b. <b>22 March 1922</b> – d. 20 April 2010, at Bonnechere Manor, Renfrew) was his wife — and she brought a very different geography to the family. Though she lived her married life in the Ottawa Valley, she was <b>born Marie Claire Léa Lalonde far to the west, at St-Victor, Saskatchewan</b>, into a French-Catholic homesteading family of the <b>Willow Bunch</b> colony. Her parents were <b>Eugene Lalonde</b> (Québec-born) and <b>Melina Gaudry</b> (Manitoba-born); the 1931 census finds nine-year-old Claire on Main Street, Willow Bunch, with siblings Leon, Rene, Denise, Bernard and baby Jeannine — the very siblings named in her 2010 obituary (Denise Gibeault of Edmonton, Jeannine Verbisky of Calgary; Leon, Rene and Bernard predeceased her). She and Stan married about <b>1946</b> (their 40th anniversary fell in 1986); of their four children one is <b>Ron</b> (who married Bernadette Casey). The living generation is kept private.</p>
+ <p><em>Stan graded <b>reported</b> (birth year inferred from his age, 79); Claire's line is now <b>sourced</b> from her Saskatchewan birth registration + the 1931 census — see her parents below.</em></p>`,
+ cite:`Stan: Peter Hum, "Firefighters pay tribute to Valley legend," <em>Ottawa Citizen</em>, 28 Dec 1996, p. E45 (image saved: <code>records/TOURANGEAU_Stanley_obituary_OttawaCitizen_1996-12-28.pdf</code>). Claire: 2010 obituary, Pilon Family Funeral Home; <b>birth registration</b> — Marie Claire Léa Lalonde, b. 22 Mar 1922, St-Victor SK (Saskatchewan Birth Index, reg. 10628; parents Eugene Lalonde &amp; Melina Gaudry); <b>1931 Census of Canada</b>, Willow Bunch, Saskatchewan (Ancestry coll. 62640, rec. 5494761) — image saved: <code>records/LALONDE_1931-census_Willow-Bunch-Saskatchewan.png</code>. See research-dossier.md §§ Session 1, 6.`},
 
 /* ---------- GEN 2 · Stan's parents (Tourangeau line climbs) ---------- */
 {id:'henry_tourangeau',gen:2,ord:25,lineage:'tourangeau',status:'sourced',kind:'couple',
@@ -761,6 +762,14 @@ const NODES = [ // NODES array elements — spliced into tree-shell.html at /*__
  facts:`<p><b>John Tourangeau (Sr.)</b> — father of the John above — was <b>born at Portage-du-Fort, Pontiac, Québec</b>, per his son's 1929 death registration. He is the deepest-known root of this tree and marks the Tourangeau line's <b>French-Canadian Québec origin</b>, just across the Ottawa River from the Renfrew County the family would settle in.</p>
  <p>His wife — the elder John's mother — was already <b>"forgotten"</b> when the 1929 death was registered, and no dates are yet known for either. Next: Portage-du-Fort / Pontiac Québec Catholic parish registers to name his wife and push the line further back into Québec.</p>`,
  cite:`Named ("John Touranger, b. Portage, P.Q.") on the Ontario death registration of his son John Tourangeau, 12 Feb 1929 (Ancestry coll. 8946, rec. 2707129). See research-dossier.md § Session 2.`},
+
+/* ---------- GEN 2 · Claire's parents (Ron's maternal grandparents — the Lalonde line, Prairie West) ---------- */
+{id:'eugene_melina_lalonde',gen:2,ord:60,lineage:'lalonde',status:'sourced',kind:'couple',
+ name:`Eugene Lalonde <em>&amp;</em> Melina Gaudry`,
+ sub:`Willow Bunch / St-Victor, Saskatchewan · French-Catholic homesteaders · Eugene b. QC · Melina b. MB`,
+ facts:`<p><b>Eugene Lalonde</b> and <b>Melina Gaudry</b> were Claire's parents — Ron's maternal grandparents, and the reason his mother's line runs not through the Ottawa Valley but across the <b>French-Catholic homestead settlements of the Prairies</b>. The family lived at <b>Willow Bunch, Saskatchewan</b> (the district around St-Victor), a Métis-and-French-Canadian colony in the province's south.</p>
+ <p>They embody the classic westward migration of French Canada: <b>Eugene was born in Québec</b> (<i>c.</i>1890) and <b>Melina in Manitoba</b> (<i>c.</i>1895, a Franco-Manitobane), and the two met and raised their family further west again, in Saskatchewan. The <b>1931 census</b> shows their household on Main Street, Willow Bunch — Eugene (41), Melina (36) and six children: <b>Leon</b> (11), <b>Claire</b> (9, our line — b. 22 Mar 1922 at St-Victor), <b>Rene</b> (5), <b>Denise</b> (3), <b>Bernard</b> (2) and <b>Jeannine</b> (11 months) — French-speaking and Roman Catholic. Their own parents (the Lalonde roots in Québec and the Gaudry roots in Manitoba) are the next rungs back.</p>`,
+ cite:`<b>1931 Census of Canada</b>, Willow Bunch (Main St), Saskatchewan (Ancestry coll. 62640, rec. 5494761) — household: Eugene (41, b. QC), Melina (36, b. MB), Leon, Claire, Rene, Denise, Bernard, Jeannine — image saved: <code>records/LALONDE_1931-census_Willow-Bunch-Saskatchewan.png</code>. Melina's maiden name (Gaudry) &amp; Claire's exact birth: <b>Saskatchewan Birth Index</b> — Marie Claire Léa Lalonde, b. 22 Mar 1922, St-Victor (reg. 10628; parents Eugene Lalonde &amp; Melina Gaudry). See research-dossier.md § Session 6.`},
 
 /* ---------- GEN 1 · Bernadette's parents (her line — Casey × Whelan) ---------- */
 {id:'john_margaret_casey',gen:1,ord:150,lineage:'casey',status:'sourced',kind:'couple',
@@ -854,6 +863,7 @@ spans:{
     HARD RULE: every non-spacer node in nodes.js needs a line here or the build fails. */
  ronald_bernadette:[1935,2019,1],          /* Bernadette 1935–2019; Ron living, birth estimated */
  stanley_claire_tourangeau:[1917,2010,1],  /* Stan c.1917 (age 79 in 1996)–d.1996; Claire 1922–2010 */
+ eugene_melina_lalonde:[1890,1965,1],      /* gen-2 Lalonde (Ron's maternal grandparents); Eugene b.~1890 QC, Melina b.~1895 MB; deaths est. */
  henry_tourangeau:[1890,1965,1],           /* Henry b. Jul 1890 (census); Nettie ~1893; deaths estimated */
  john_marien_tourangeau:[1863,1935,1],     /* John b.1863 Portage-du-Fort QC – d.1929 Arnprior; Marien ~1866, death est. */
  john_sr_tourangeau:[1838,1910,1],         /* gen-4 Québec-origin ancestor; both dates estimated */
