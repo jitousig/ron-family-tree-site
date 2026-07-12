@@ -817,7 +817,7 @@ const WIKI_LINKS = (// WIKI_LINKS — [term-as-it-appears-in-the-cards, Wikipedi
 
 /* ============ SHARED HELPERS ============ */
 const linClass={tourangeau:'l-tous',casey:'l-barnes',lalonde:'l-tetr',whelan:'l-heff'};
-const linVar={tousignant:'--tous',tetrault:'--tetr',heffernan:'--heff',charlebois:'--charl',barnes:'--barnes',buckerfield:'--buck'};
+const linVar={tourangeau:'--tous',casey:'--barnes',lalonde:'--tetr',whelan:'--heff'};
 const linName={tourangeau:'Tourangeau',casey:'Casey',lalonde:'Lalonde',whelan:'Whelan'};
 const byId={}; NODES.forEach(n=>byId[n.id]=n);
 const detailNodes=NODES.filter(n=>n.kind!=='spacer');
@@ -1022,7 +1022,7 @@ function switchToTree(){
 }
 
 /* -------- filters + global accent-insensitive full-text search -------- */
-const linState={tousignant:1,tetrault:1,heffernan:1,charlebois:1,barnes:1,buckerfield:1};
+const linState={tourangeau:1,casey:1,lalonde:1,whelan:1};
 document.querySelectorAll('.fchip[data-lin]').forEach(b=>b.onclick=()=>{
   const l=b.dataset.lin; linState[l]=linState[l]?0:1; b.dataset.on=linState[l]; applyFilter();});
 const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();const hayById={};
