@@ -567,7 +567,8 @@ a.nrv-card::after{content:'›';font-size:.72em;color:var(--record-blue);vertica
 <div class="controls">
   <button class="fchip l-tous" data-lin="tourangeau" data-on="1">Tourangeau</button>
   <button class="fchip l-barnes" data-lin="casey" data-on="1">Casey</button>
-  <!-- As parents add new surnames, add chips here reusing the spare colour slots: l-tetr, l-heff, l-charl, l-buck -->
+  <button class="fchip l-heff" data-lin="whelan" data-on="1">Whelan</button>
+  <!-- As parents add new surnames, add chips here reusing the spare colour slots: l-tetr (lalonde), l-charl, l-buck -->
 
   <span class="spacer"></span>
   <button class="btn trail" id="clearTrail">✕ Clear trail</button>
@@ -761,13 +762,28 @@ const NODES = [ // NODES array elements — spliced into tree-shell.html at /*__
  cite:`Named ("John Touranger, b. Portage, P.Q.") on the Ontario death registration of his son John Tourangeau, 12 Feb 1929 (Ancestry coll. 8946, rec. 2707129). See research-dossier.md § Session 2.`},
 
 /* ---------- GEN 1 · Bernadette's parents (her line — Casey × Whelan) ---------- */
-{id:'john_margaret_casey',gen:1,ord:150,lineage:'casey',status:'reported',kind:'couple',
+{id:'john_margaret_casey',gen:1,ord:150,lineage:'casey',status:'sourced',kind:'couple',
  name:`John Edward Casey <em>&amp;</em> Margaret Mary Whelan`,
- sub:`Arnprior / Renfrew Co., Ontario · dates to source`,
- facts:`<p><b>John Edward Casey</b> and <b>Margaret Mary Whelan</b> were Bernadette's parents — an Irish-Catholic couple of the Ottawa Valley, almost certainly rooted in the <b>Arnprior / Renfrew County</b> area where Bernadette was born (1935) and later buried. Margaret's maiden name opens a <b>Whelan</b> line.</p>
- <p>Their children included Bernadette and her siblings Mary (Roberts), Kathleen (Barry), John, Gerry and Bill Casey.</p>
- <p><em>Reported from Bernadette's obituary. Their birth, marriage and death records — and their own parents — are still to be found (1921 / 1931 census, Arnprior Catholic parish registers).</em></p>`,
- cite:`Bernadette Casey Tourangeau obituary, Pilon Family Funeral Home (2019). See research-dossier.md § Session 1.`}
+ sub:`Montréal · John 1893–1984 · m. 20 Aug 1918, Saint-Gabriel parish`,
+ parents:['william_hannah_casey','whelan_dergan'],
+ facts:`<p><b>John Edward Casey</b> (b. 30 July 1893 – d. 27 January 1984) and <b>Margaret Mary Whelan</b> were Bernadette's parents — a <b>Montréal Irish-Catholic</b> family (not Ottawa-Valley, as first assumed). They married on <b>20 August 1918 at Saint-Gabriel parish, Montréal</b>. Bernadette, their youngest and last-surviving child, grew up in this Montréal family and later married into the Tourangeaus of Arnprior, where she is buried.</p>
+ <p>Their children were <b>John, Gerry, Bill, Mary (Roberts), Kathleen (Barry)</b> and <b>Bernadette</b>. Margaret was still a <b>minor</b> at the 1918 wedding, so was born about 1898; her death date is still to be found.</p>
+ <p>The 1918 register names both sets of Bernadette's grandparents — on the Casey side <b>William Casey &amp; Hannah McCorbile</b>, and on the Whelan side <b>William Whelan &amp; Mary Deegan</b> (both grandfathers were named William).</p>`,
+ cite:`Marriage act (image): Quebec Vital &amp; Church Records (Drouin) — John Edward Casey × Mary Margaret Whelan, 20 Aug 1918, Saint-Gabriel, Montréal (Ancestry coll. 1091, recs. 2754923 &amp; 13397214); saved <code>records/CASEY-WHELAN_marriage_1918_Saint-Gabriel-Montreal.jpg</code>. Death: Quebec Death Registers 1926–1997 — John Edward Casey, d. 27 Jan 1984, Montréal (coll. 62976, rec. 1099591). Children from Bernadette's 2019 obituary. See research-dossier.md § Session 3.`},
+
+/* ---------- GEN 2 · Bernadette's paternal grandparents (Casey, Montréal) ---------- */
+{id:'william_hannah_casey',gen:2,ord:140,lineage:'casey',status:'sourced',kind:'couple',
+ name:`William Casey <em>&amp;</em> Hannah McCorbile`,
+ sub:`Montréal · Irish Catholic · named in the 1918 marriage act`,
+ facts:`<p><b>William Casey</b> and <b>Hannah McCorbile</b> — John Edward Casey's parents — head Bernadette's Casey line in <b>Montréal</b>'s Irish-Catholic community, in Saint-Gabriel parish. Their names are read from their son's 1918 marriage register; the mother's Irish surname (written <b>McCorbile</b>, indexed "McCorbielle" — perhaps McCorkell) is hard to pin exactly. No dates are yet known.</p>`,
+ cite:`Read from the 1918 Saint-Gabriel (Montréal) marriage act of their son John Edward Casey (Drouin; Ancestry coll. 1091, rec. 2754923) — image saved: <code>records/CASEY-WHELAN_marriage_1918_Saint-Gabriel-Montreal.jpg</code>.`},
+
+/* ---------- GEN 2 · Bernadette's maternal grandparents (Whelan, Montréal) ---------- */
+{id:'whelan_dergan',gen:2,ord:160,lineage:'whelan',status:'sourced',kind:'couple',
+ name:`William Whelan <em>&amp;</em> Mary Deegan`,
+ sub:`Montréal · Irish Catholic · named in the 1918 marriage act`,
+ facts:`<p><b>William Whelan</b> and <b>Mary Deegan</b> — Margaret Mary Whelan's parents — head Bernadette's <b>Whelan</b> line in Montréal's Irish-Catholic community. Their names are read directly from the 1918 Saint-Gabriel marriage register (the Ancestry index had garbled them to "Whersan Whilan" and "Mary Dergan"). At the marriage their daughter Margaret was a <b>minor</b> (so born <i>c.</i>1898), and William and Mary gave their consent. No dates are yet known for either.</p>`,
+ cite:`Read from the 1918 Saint-Gabriel (Montréal) marriage act of their daughter Mary Margaret Whelan (Drouin; Ancestry coll. 1091, recs. 13397214 / 2754923) — image saved: <code>records/CASEY-WHELAN_marriage_1918_Saint-Gabriel-Montreal.jpg</code>.`}
  ];
 const VIEWDATA = (// VIEWDATA — supplementary presentation data for the interactive tree views
 // (map journeys, timeline lifespans, era markers, frontier, tour, stories).
@@ -781,7 +797,9 @@ spans:{
  henry_tourangeau:[1890,1965,1],           /* Henry b. Jul 1890 (census); Nettie ~1893; deaths estimated */
  john_marien_tourangeau:[1863,1935,1],     /* John b.1863 Portage-du-Fort QC – d.1929 Arnprior; Marien ~1866, death est. */
  john_sr_tourangeau:[1838,1910,1],         /* gen-4 Québec-origin ancestor; both dates estimated */
- john_margaret_casey:[1905,1985,1],        /* both estimated — parents of a 1935 child, dates unsourced */
+ john_margaret_casey:[1893,1984,1],        /* John b.1893–d.1984 Montréal; Margaret dates TBD */
+ william_hannah_casey:[1863,1935,1],       /* Casey grandparents (Montréal); both dates estimated */
+ whelan_dergan:[1868,1940,1],              /* Whelan grandparents (Montréal); both dates estimated */
 },
 
 /* Migration map — each journey is a labelled path of stops:
