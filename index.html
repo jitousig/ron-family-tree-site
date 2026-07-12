@@ -838,14 +838,16 @@ const linClass={tourangeau:'l-tous',casey:'l-barnes',lalonde:'l-tetr',whelan:'l-
 const linVar={tourangeau:'--tous',casey:'--barnes',lalonde:'--tetr',whelan:'--heff'};
 const linName={tourangeau:'Tourangeau',casey:'Casey',lalonde:'Lalonde',whelan:'Whelan'};
 const byId={}; NODES.forEach(n=>byId[n.id]=n);
+const ROOT=(NODES.find(n=>n.tag==='root')||NODES[0]||{}).id;   // the subject couple at gen 0
 const detailNodes=NODES.filter(n=>n.kind!=='spacer');
 const cssColor=lin=>getComputedStyle(document.documentElement).getPropertyValue(linVar[lin]||'--pencil').trim()||'#8B9088';
 const plain=html=>{const d=document.createElement('div');d.innerHTML=html;return d.textContent;};
 function ancestorsOf(id){ const out=new Set(); const walk=i=>{ (byId[i]&&byId[i].parents||[]).forEach(p=>{ if(byId[p]&&!out.has(p)){out.add(p);walk(p);} }); }; walk(id); return out; }
 function pathUp(fromId,toId){ // chain of ids from fromId up to toId (inclusive), or null
+  if(!byId[fromId]) return null;
   if(fromId===toId) return [fromId];
   const seen=new Set([fromId]); const q=[[fromId]];
-  while(q.length){ const path=q.shift(); const n=byId[path[path.length-1]];
+  while(q.length){ const path=q.shift(); const n=byId[path[path.length-1]]; if(!n)continue;
     for(const p of (n.parents||[])){ if(!byId[p]||seen.has(p))continue; const np=[...path,p];
       if(p===toId) return np; seen.add(p); q.push(np); } }
   return null;
@@ -974,9 +976,9 @@ function enterFocus(id){
   document.body.classList.add('focused');
   const n=byId[id];
   document.getElementById('focusTitle').innerHTML='The line above <em>'+n.name+'</em>';
-  const p=pathUp('joel',id);
+  const p=pathUp(ROOT,id);
   document.getElementById('focusDescent').innerHTML = p
-    ? 'How it reaches you: <b>'+p.map(i=>plain(byId[i].name)).join('</b> ← <b>')+'</b>'
+    ? 'Line of descent: <b>'+p.map(i=>plain(byId[i].name)).join('</b> ← <b>')+'</b>'
     : '';
   renderTree();
   try{
@@ -1019,7 +1021,7 @@ function drawWires(){
 
 /* -------- founder trail -------- */
 function traceTrail(id){
-  const p=pathUp('joel',id); if(!p)return;
+  const p=pathUp(ROOT,id); if(!p)return;
   trailSet=new Set(p);
   document.body.classList.add('trailing');
   if(focusRoot)exitFocus();
@@ -1111,7 +1113,7 @@ function renderDrawer(){
   const chip=n.status==='sourced'?'sourced':n.status==='reported'?'reported':'gap';
   const chipLbl=n.status==='sourced'?'Sourced':n.status==='reported'?'Reported':'To prove';
   let stamp='<span class="chip '+chip+'">'+chipLbl+'</span>'+(n.kind==='founder'?' <span class="chip" style="color:var(--stamp);border:1.4px solid var(--stamp)">Founding immigrant</span>':'');
-  if(n.id!=='joel'&&pathUp('joel',n.id)) stamp+=' <button class="d-act tr" data-act="trail">Trace to Joel and Stephen</button>';
+  if(n.id!==ROOT&&pathUp(ROOT,n.id)) stamp+=' <button class="d-act tr" data-act="trail">Trace to Ronald &amp; Bernadette</button>';
   if((n.parents||[]).length&&n.gen>=1) stamp+=' <button class="d-act" data-act="base">⌖ Base the tree here</button>';
   (VIEWDATA.stories||[]).forEach(s=>{
     if(s.open.some(o=>o[0]===n.id)) stamp+=' <button class="d-act st" data-act="story" data-story="'+s.k+'">✦ Story: '+s.short+'</button>';
@@ -1328,11 +1330,11 @@ function buildFan(){
   const ct=document.createElementNS(svgNS,'text');
   ct.setAttribute('x',CX);ct.setAttribute('y',CY-2);ct.setAttribute('text-anchor','middle');
   ct.setAttribute('style','font-family:Fraunces,serif;font-size:13px;fill:#ECEEE2;font-weight:600');
-  ct.textContent='JOEL &'; svg.appendChild(ct);
-  const ct2=ct.cloneNode();ct2.setAttribute('y',CY+14);ct2.textContent='STEPHEN';svg.appendChild(ct2);
-  // two halves: mother's side left, father's side right
-  const joel=byId['joel'];
-  const [m,f]=joel.parents;
+  ct.textContent='RONALD &'; svg.appendChild(ct);
+  const ct2=ct.cloneNode();ct2.setAttribute('y',CY+14);ct2.textContent='BERNADETTE';svg.appendChild(ct2);
+  // two halves: his line left, her line right
+  const rootN=byId[ROOT];
+  const [m,f]=rootN.parents;
   const wm=weight(m),wf=weight(f),tot=wm+wf;
   const START=-Math.PI/2;
   wedge(m,1,START,START+2*Math.PI*wm/tot);
