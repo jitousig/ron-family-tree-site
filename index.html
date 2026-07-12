@@ -568,7 +568,8 @@ a.nrv-card::after{content:'›';font-size:.72em;color:var(--record-blue);vertica
   <button class="fchip l-tous" data-lin="tourangeau" data-on="1">Tourangeau</button>
   <button class="fchip l-barnes" data-lin="casey" data-on="1">Casey</button>
   <button class="fchip l-heff" data-lin="whelan" data-on="1">Whelan</button>
-  <!-- As parents add new surnames, add chips here reusing the spare colour slots: l-tetr (lalonde), l-charl, l-buck -->
+  <button class="fchip l-charl" data-lin="deegan" data-on="1">Deegan</button>
+  <!-- As parents add new surnames, add chips here reusing the spare colour slots: l-tetr (lalonde), l-buck -->
 
   <span class="spacer"></span>
   <button class="btn trail" id="clearTrail">✕ Clear trail</button>
@@ -783,9 +784,25 @@ const NODES = [ // NODES array elements — spliced into tree-shell.html at /*__
 /* ---------- GEN 2 · Bernadette's maternal grandparents (Whelan, Montréal) ---------- */
 {id:'whelan_dergan',gen:2,ord:160,lineage:'whelan',status:'sourced',kind:'couple',
  name:`William Whelan <em>&amp;</em> Mary Deegan`,
- sub:`Montréal · Irish Catholic · named in the 1918 marriage act`,
- facts:`<p><b>William Whelan</b> and <b>Mary Deegan</b> — Margaret Mary Whelan's parents — head Bernadette's <b>Whelan</b> line in Montréal's Irish-Catholic community. Their names are read directly from the 1918 Saint-Gabriel marriage register (the Ancestry index had garbled them to "Whersan Whilan" and "Mary Dergan"). At the marriage their daughter Margaret was a <b>minor</b> (so born <i>c.</i>1898), and William and Mary gave their consent. No dates are yet known for either.</p>`,
- cite:`Read from the 1918 Saint-Gabriel (Montréal) marriage act of their daughter Mary Margaret Whelan (Drouin; Ancestry coll. 1091, recs. 13397214 / 2754923) — image saved: <code>records/CASEY-WHELAN_marriage_1918_Saint-Gabriel-Montreal.jpg</code>.`}
+ sub:`Montréal (Saint-Gabriel) · m. 10 Jun 1895 · he a policeman`,
+ parents:['james_whelan','william_deegan'],
+ facts:`<p><b>William James Whelan</b> — a <b>policeman</b> of Saint-Gabriel's — and <b>Mary Deegan</b> were Margaret Mary Whelan's parents, heading Bernadette's <b>Whelan</b> line in Montréal's Irish-Catholic community. They married at <b>Saint-Gabriel on 10 June 1895</b>; their daughter Margaret (b. <i>c.</i>1898) was still a minor at her own 1918 wedding. (The 1918 index had garbled their names to "Whersan Whilan / Mary Dergan"; the register images correct them.)</p>
+ <p>Their 1895 marriage act names both of their parents — on the Whelan side <b>James Whelan &amp; Bridget Cavanagh</b>, on the Deegan side <b>William Deegan &amp; Mary Farrell</b>.</p>`,
+ cite:`Marriage: 1895 Saint-Gabriel (Montréal) act of William James Whelan × Mary Deegan (Drouin; Ancestry coll. 1091, rec. 615353) — image saved: <code>records/WHELAN-DEEGAN_marriage_1895_Saint-Gabriel-Montreal.jpg</code>. Names also on their daughter's 1918 act (recs. 13397214 / 2754923).`},
+
+/* ---------- GEN 3 · Bernadette's Whelan great-great-grandparents (Montréal) ---------- */
+{id:'james_whelan',gen:3,ord:155,lineage:'whelan',status:'sourced',kind:'couple',
+ name:`James Whelan <em>&amp;</em> Bridget Cavanagh`,
+ sub:`Irish Catholic · Québec · from the 1895 marriage act`,
+ facts:`<p><b>James Whelan</b> and <b>Bridget Cavanagh</b> were the parents of William James Whelan (the Montréal policeman) — Bernadette's Whelan great-great-grandparents. Their names come from their son's 1895 Saint-Gabriel marriage act, which records Bridget as already <b>deceased</b> by then and "of Québec." No dates are yet known; the Cavanagh line is a branch for another day.</p>`,
+ cite:`Named on the 1895 Saint-Gabriel (Montréal) marriage act of their son William James Whelan (Drouin; Ancestry coll. 1091, rec. 615353). See research-dossier.md § Session 3.`},
+
+/* ---------- GEN 3 · Bernadette's Deegan great-great-grandparents (Montréal) ---------- */
+{id:'william_deegan',gen:3,ord:165,lineage:'deegan',status:'sourced',kind:'couple',
+ name:`William Deegan <em>&amp;</em> Mary Farrell`,
+ sub:`Saint-Gabriel, Montréal · Irish Catholic · from the 1895 marriage act`,
+ facts:`<p><b>William Deegan</b> and <b>Mary Farrell</b>, of Saint-Gabriel's parish, Montréal, were Mary Deegan's parents — opening the <b>Deegan</b> (and Farrell) branches of Bernadette's ancestry. Their names are read from their daughter's 1895 marriage act. No dates are yet known.</p>`,
+ cite:`Named on the 1895 Saint-Gabriel (Montréal) marriage act of their daughter Mary Deegan (Drouin; Ancestry coll. 1091, rec. 615353). See research-dossier.md § Session 3.`}
  ];
 const VIEWDATA = (// VIEWDATA — supplementary presentation data for the interactive tree views
 // (map journeys, timeline lifespans, era markers, frontier, tour, stories).
@@ -801,7 +818,9 @@ spans:{
  john_sr_tourangeau:[1838,1910,1],         /* gen-4 Québec-origin ancestor; both dates estimated */
  john_margaret_casey:[1893,1984,1],        /* John b.1893–d.1984 Montréal; Margaret dates TBD */
  william_hannah_casey:[1863,1935,1],       /* Casey grandparents (Montréal); both dates estimated */
- whelan_dergan:[1868,1940,1],              /* Whelan grandparents (Montréal); both dates estimated */
+ whelan_dergan:[1868,1940,1],              /* Wm James Whelan (policeman) × Mary Deegan; m.1895; dates est. */
+ james_whelan:[1843,1894,1],               /* Wm James Whelan's parents; Bridget Cavanagh d. by 1895 */
+ william_deegan:[1845,1915,1],             /* Mary Deegan's parents (St-Gabriel); both dates estimated */
 },
 
 /* Migration map — each journey is a labelled path of stops:
@@ -836,9 +855,9 @@ const WIKI_LINKS = (// WIKI_LINKS — [term-as-it-appears-in-the-cards, Wikipedi
 );
 
 /* ============ SHARED HELPERS ============ */
-const linClass={tourangeau:'l-tous',casey:'l-barnes',lalonde:'l-tetr',whelan:'l-heff'};
-const linVar={tourangeau:'--tous',casey:'--barnes',lalonde:'--tetr',whelan:'--heff'};
-const linName={tourangeau:'Tourangeau',casey:'Casey',lalonde:'Lalonde',whelan:'Whelan'};
+const linClass={tourangeau:'l-tous',casey:'l-barnes',lalonde:'l-tetr',whelan:'l-heff',deegan:'l-charl'};
+const linVar={tourangeau:'--tous',casey:'--barnes',lalonde:'--tetr',whelan:'--heff',deegan:'--charl'};
+const linName={tourangeau:'Tourangeau',casey:'Casey',lalonde:'Lalonde',whelan:'Whelan',deegan:'Deegan'};
 const byId={}; NODES.forEach(n=>byId[n.id]=n);
 const ROOT=(NODES.find(n=>n.tag==='root')||NODES[0]||{}).id;   // the subject couple at gen 0
 const detailNodes=NODES.filter(n=>n.kind!=='spacer');
@@ -1044,7 +1063,7 @@ function switchToTree(){
 }
 
 /* -------- filters + global accent-insensitive full-text search -------- */
-const linState={tourangeau:1,casey:1,lalonde:1,whelan:1};
+const linState={tourangeau:1,casey:1,lalonde:1,whelan:1,deegan:1};
 document.querySelectorAll('.fchip[data-lin]').forEach(b=>b.onclick=()=>{
   const l=b.dataset.lin; linState[l]=linState[l]?0:1; b.dataset.on=linState[l]; applyFilter();});
 const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();const hayById={};
@@ -1689,7 +1708,7 @@ function buildMap(){
 function buildTimeline(){
   const Y0=1580,Y1=2035,PXY=2.15,ML=14,MT=64;
   const Xr=yr=>ML+(yr-Y0)*PXY;
-  const groups=[['','The living generation'],['tourangeau',linName.tourangeau],['lalonde',linName.lalonde],['casey',linName.casey],['whelan',linName.whelan]].filter(g=>g[0]===''||NODES.some(n=>n.lineage===g[0]));
+  const groups=[['','The living generation'],['tourangeau',linName.tourangeau],['lalonde',linName.lalonde],['casey',linName.casey],['whelan',linName.whelan],['deegan',linName.deegan]].filter(g=>g[0]===''||NODES.some(n=>n.lineage===g[0]));
   const RH=21,GH=34;
   let rows=[],y=MT;
   groups.forEach(([lin,label])=>{
