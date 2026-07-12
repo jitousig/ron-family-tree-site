@@ -793,9 +793,11 @@ const NODES = [ // NODES array elements — spliced into tree-shell.html at /*__
 /* ---------- GEN 3 · Bernadette's Whelan great-great-grandparents (Montréal) ---------- */
 {id:'james_whelan',gen:3,ord:155,lineage:'whelan',status:'sourced',kind:'couple',
  name:`James Whelan <em>&amp;</em> Bridget Cavanagh`,
- sub:`Irish Catholic · Québec · from the 1895 marriage act`,
- facts:`<p><b>James Whelan</b> and <b>Bridget Cavanagh</b> were the parents of William James Whelan (the Montréal policeman) — Bernadette's Whelan great-great-grandparents. Their names come from their son's 1895 Saint-Gabriel marriage act, which records Bridget as already <b>deceased</b> by then and "of Québec." No dates are yet known; the Cavanagh line is a branch for another day.</p>`,
- cite:`Named on the 1895 Saint-Gabriel (Montréal) marriage act of their son William James Whelan (Drouin; Ancestry coll. 1091, rec. 615353). See research-dossier.md § Session 3.`},
+ sub:`m. 1 May 1860 · Ste-Brigitte-de-Laval, nr Québec City · Irish Catholic`,
+ parents:['martin_whelan_day','tobias_kavanagh'],
+ facts:`<p><b>James Whelan</b> and <b>Bridget Cavanagh</b> (Kavanagh) were the parents of William James Whelan, the Montréal policeman — Bernadette's Whelan great-great-grandparents. Their names first surfaced on their son's 1895 marriage act (Bridget already <b>deceased</b>, "of Stoneham"); their own marriage act now fixes the family's true origin: not Montréal at all, but the <b>Irish-Catholic settlements north of Québec City</b>.</p>
+ <p>They married on <b>1 May 1860 at Ste-Brigitte-de-Laval</b> (the Irish parish east of the city). James — of age, so born by <i>c.</i>1839 — was of the neighbouring parish of <b>St-Edmond-de-Stoneham</b>; Bridget was of <b>St-Dunstan-du-Lac-Beauport</b>. It was their son William James who later moved down-river to Montréal and joined the police, marrying Mary Deegan there in 1895. The 1860 act names both sets of parents: <b>Martin Whelan &amp; Margaret Day</b> (Whelan), <b>Tobias Kavanagh &amp; Anne Kelly</b> (Cavanagh).</p>`,
+ cite:`Marriage: 1 May 1860, Ste-Brigitte-de-Laval, Québec (Drouin; Ancestry coll. 1091, rec. 2069264) — image saved: <code>records/WHELAN-KAVANAGH_marriage_1860_Ste-Brigitte-de-Laval.jpg</code>. Names also on their son William James Whelan's 1895 Saint-Gabriel act (rec. 615353).`},
 
 /* ---------- GEN 3 · Bernadette's Deegan great-great-grandparents (Montréal) ---------- */
 {id:'william_deegan',gen:3,ord:165,lineage:'deegan',status:'sourced',kind:'couple',
@@ -817,7 +819,21 @@ const NODES = [ // NODES array elements — spliced into tree-shell.html at /*__
  name:`John Farrell <em>&amp;</em> Catharine Mullins`,
  sub:`Irish Catholic Montréal · from the 1867 marriage`,
  facts:`<p><b>John Farrell</b> — a <b>farmer</b>, already deceased by 1867 — and <b>Catharine Mullins</b> were Mary Farrell's parents, of Notre-Dame parish, Montréal. Their names are read from their daughter's 1867 marriage act, where Mary was a <b>minor</b> and her mother Catharine gave consent. With the Deegans, they are Bernadette's deepest-known Montréal-Irish roots — no dates yet known.</p>`,
- cite:`Read from the 1867 Basilique Notre-Dame (Montréal) marriage act of their daughter Mary Farrell (Drouin; Ancestry coll. 1091, rec. 11488086) — image saved: <code>records/DEEGAN-FARRELL_marriage_1867_Notre-Dame-Montreal.jpg</code>.`}
+ cite:`Read from the 1867 Basilique Notre-Dame (Montréal) marriage act of their daughter Mary Farrell (Drouin; Ancestry coll. 1091, rec. 11488086) — image saved: <code>records/DEEGAN-FARRELL_marriage_1867_Notre-Dame-Montreal.jpg</code>.`},
+
+/* ---------- GEN 4 · Whelan line back into the Irish settlements N of Québec City ---------- */
+{id:'martin_whelan_day',gen:4,ord:153,lineage:'whelan',status:'sourced',kind:'couple',
+ name:`Martin Whelan <em>&amp;</em> Margaret Day`,
+ sub:`St-Edmond-de-Stoneham, nr Québec City · Irish Catholic`,
+ facts:`<p><b>Martin Whelan</b> — already <b>deceased</b> by 1860 — and <b>Margaret Day</b> were James Whelan's parents, of the parish of <b>St-Edmond-de-Stoneham</b> in the Irish-Catholic townships north of Québec City. Their names are read from their son James's 1860 marriage act at Ste-Brigitte-de-Laval. This is the deepest-known root of Bernadette's Whelan line; no vital dates are yet known.</p>`,
+ cite:`Named on the 1 May 1860 Ste-Brigitte-de-Laval marriage act of their son James Whelan (Drouin; Ancestry coll. 1091, rec. 2069264) — image saved: <code>records/WHELAN-KAVANAGH_marriage_1860_Ste-Brigitte-de-Laval.jpg</code>.`},
+
+/* ---------- GEN 4 · Cavanagh line (Bridget's parents, Lac-Beauport) ---------- */
+{id:'tobias_kavanagh',gen:4,ord:157,lineage:'whelan',status:'sourced',kind:'couple',
+ name:`Tobias Kavanagh <em>&amp;</em> Anne Kelly`,
+ sub:`St-Dunstan-du-Lac-Beauport, nr Québec City · Irish Catholic`,
+ facts:`<p><b>Tobias Kavanagh</b> and <b>Anne Kelly</b> were Bridget Cavanagh's parents, of the parish of <b>St-Dunstan-du-Lac-Beauport</b>, another of the Irish-Catholic settlements north of Québec City. Their names are read from their daughter Bridget's 1860 marriage to James Whelan at Ste-Brigitte-de-Laval, where a <b>Patrick Kavanagh</b> (likely Bridget's brother) witnessed. With the Whelans, they are Bernadette's deepest-known roots on this branch — no vital dates are yet known.</p>`,
+ cite:`Named on the 1 May 1860 Ste-Brigitte-de-Laval marriage act of their daughter Bridget Kavanagh (Drouin; Ancestry coll. 1091, rec. 2069264) — image saved: <code>records/WHELAN-KAVANAGH_marriage_1860_Ste-Brigitte-de-Laval.jpg</code>.`}
  ];
 const VIEWDATA = (// VIEWDATA — supplementary presentation data for the interactive tree views
 // (map journeys, timeline lifespans, era markers, frontier, tour, stories).
@@ -834,7 +850,9 @@ spans:{
  john_margaret_casey:[1893,1984,1],        /* John b.1893–d.1984 Montréal; Margaret dates TBD */
  william_hannah_casey:[1863,1935,1],       /* Casey grandparents (Montréal); both dates estimated */
  whelan_dergan:[1868,1940,1],              /* Wm James Whelan (policeman) × Mary Deegan; m.1895; dates est. */
- james_whelan:[1843,1894,1],               /* Wm James Whelan's parents; Bridget Cavanagh d. by 1895 */
+ james_whelan:[1838,1894,1],               /* m.1860 Ste-Brigitte-de-Laval, both of age; Bridget d. by 1895 */
+ martin_whelan_day:[1810,1885,1],          /* gen-4 Whelan × Day, St-Edmond-de-Stoneham; Martin d. by 1860; est. */
+ tobias_kavanagh:[1810,1885,1],            /* gen-4 Kavanagh × Kelly, St-Dunstan-du-Lac-Beauport; est. */
  william_deegan:[1845,1915,1],             /* Mary Deegan's parents; m.1867 Notre-Dame; dates estimated */
  deegan_sr:[1818,1890,1],                  /* gen-4 Deegan × Garrigou; mid-19thc Irish Montréal; est. */
  farrell_mullins:[1818,1890,1],            /* gen-4 Farrell × Mullins; John Farrell d. by 1867; est. */
@@ -867,6 +885,9 @@ const WIKI_LINKS = (// WIKI_LINKS — [term-as-it-appears-in-the-cards, Wikipedi
 // Spliced into tree-shell.html at /*__LINKS__*/ by _build.js.
 [
  /* ['Trois-Rivières','https://en.wikipedia.org/wiki/Trois-Rivi%C3%A8res'], */
+ ['Ste-Brigitte-de-Laval','https://en.wikipedia.org/wiki/Sainte-Brigitte-de-Laval'],
+ ['Lac-Beauport','https://en.wikipedia.org/wiki/Lac-Beauport'],
+ ['Stoneham','https://en.wikipedia.org/wiki/Stoneham-et-Tewkesbury'],
 ]
 
 );
